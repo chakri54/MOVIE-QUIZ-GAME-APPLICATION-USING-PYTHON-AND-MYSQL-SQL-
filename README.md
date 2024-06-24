@@ -1,6 +1,6 @@
 # MOVIE-QUIZ-GAME /APPLICATION-USING-PYTHON
 
-### Description
+## Description
 
 Developed an interactive Python-based quiz game testing knowledge of MOVIES. 
 
@@ -21,6 +21,13 @@ Sure, here's a detailed description for GitHub:
 4. **Reward System**: Depending on the total score achieved, users are rewarded with virtual cash prizes. High scorers may also receive additional gifts such as electronic devices or cashback bonuses.
 
 5. **Replayability**: After each quiz session, users are given the option to play again or exit the quiz. All scores, gifts, and additional cashback are stored and displayed in a final report after users finish playing.
+6. After end of the game,  detailed report is generated consists:
+
+  -> Total number of users who played the quiz.
+  -> Individual scores of each player.
+  -> Gifts awarded to players based on their scores.
+  -> Additional cashback rewarded for high scores.
+The script uses dictionaries to store scores (all_score), gifts (all_gifts), and additional cashback (add_cash). It iterates through these dictionaries to print a structured report for each user.
 
 ### Implementation
 
