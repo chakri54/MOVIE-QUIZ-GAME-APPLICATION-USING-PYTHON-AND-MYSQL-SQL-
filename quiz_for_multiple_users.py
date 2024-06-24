@@ -1,0 +1,260 @@
+import random
+
+print('*'*26)
+print('*'*10,"QUIZ",'*'*10)
+print('*'*26)
+
+user_count = 0
+all_score = {}
+all_gifts = {}
+add_cash = {}
+
+while True:
+    user_count = user_count + 1
+    Name = input("Enter Your Name: ").upper()
+
+    q1 = '''
+    1. Who directed the film "Pushpa: The Rise," starring Allu Arjun?
+
+        a) Trivikram Srinivas
+        b) Sukumar
+        c) Koratala Siva
+        d) Vamsi Paidipally
+        '''
+
+    q2 = '''
+    2. Which actress played the role of "Sravani" in the film "Majili" alongside Naga Chaitanya?
+
+        a) Samantha
+        b) Sai Pallavi
+        c) Pooja Hegde
+        d) Rashmika 
+        '''
+
+    q3 = '''
+    3. Who composed the music for the film "RRR," directed by S.S. Rajamouli?
+
+        a) Thaman S
+        b) Devi Sri Prasad
+        c) Amit Trivedi
+        d) M.M. Keeravani
+        '''
+
+    q4 = '''
+    4. In which film did Vijay Deverakonda portray the role  named "Vijay Govind"?
+
+        a) Liger
+        b) World Famous Lover
+        c) Dear Comrade
+        d) Geetha Govindam
+        '''
+
+    q5 = '''
+    5. Who among the following directed the film "Jathi Ratnalu" starring Naveen Polishetty?
+
+        a) Nag Ashwin
+        b) Anudeep KV
+        c) Sandeep Reddy Vanga
+        d) Venky Kudumula
+        '''
+
+    q6 = '''
+    6.  In the "Baahubali" series, what is the name of the kingdom over which the conflict unfolds?
+
+        a) Mahishmati 
+        b) Kuntala
+        c) Magadha
+        d) Avanti
+        '''
+
+    q7 = '''
+    7. Who composed the music for the film "Acharya," starring Chiranjeevi?
+
+        a) Thaman S
+        b) Devi Sri Prasad
+        c) Mani Sharma
+        d) Anirudh Ravichander
+        '''
+
+    q8 = '''
+    8.In the Telugu film "Uppena," who portrayed the lead actress and won the Filmfare Award for Best Actress?
+
+        a) Krithi Shetty
+        b) Rashmika Mandanna
+        c) Sai Pallavi
+        d) Pooja Hegde
+        '''
+
+    q9 = '''
+    9. Who among the following actors starred in the film "Vakeel Saab?
+
+        a) Allu Arjun
+        b) Ram Charan
+        c) Pawan Kalyan
+        d) Prabhas
+        '''
+
+    q10 = '''
+    10. Who directed the film "Wild Dog," starring Nagarjuna in the lead role?
+
+        a) Vamsi Paidipally
+        b) Ahishor Solomon
+        c) Sudheer Varma
+        d) Gopichand Malineni
+        '''
+
+    q11 = '''
+    11. In which film did Rashmika Mandanna make her debut in Telugu cinema?
+
+        a) Chalo
+        b) Geetha Govindam
+        c) Dear Comrade
+        d) Sarileru Neekevvaru
+        '''
+
+    q12 = '''
+    12. Who composed the music for the film "Most Eligible Bachelor," starring Akhil Akkineni and Pooja Hegde?
+
+        a) Thaman S
+        b) Devi Sri Prasad
+        c) Gopi Sundar
+        d) Anirudh Ravichander
+        '''
+
+    q13 = '''
+    13.Which actress plays the lead role opposite Akhil Akkineni in "Most Eligible Bachelor"?
+
+        a) Rashmika Mandanna
+        b) Pooja Hegde 
+        c) Sai Pallavi
+        d) Krithi Shetty`
+        '''
+
+    q14 = '''
+    14. Who directed the film "Love Story," starring Naga Chaitanya and Sai Pallavi?
+
+        a) Sekhar Kammula
+        b) Mohan Krishna Indraganti
+        c) Trivikram Srinivas
+        d) Kishore Tirumala
+        '''
+
+    q15 = '''
+    15.What is the name of the recent Telugu movie featuring the hit dance number "saami saami"?
+
+        a) Oh Baby
+        b) Pushpa: The Rise 
+        c) Ala Vaikunthapurramloo
+        d) Majili
+        '''
+
+    questions = {
+            q1: 'b', q2: 'a', q3: 'd', q4: 'd', q5: 'b', q6: 'a', q7: 'c',
+            q8: 'a', q9: 'c', q10: 'b', q11: 'a', q12: 'c', q13: 'b', q14: 'a', q15: 'b'
+        }
+    score = 0
+    qno = 1
+    score_report = {}
+    report = {}
+
+    for q in questions:
+        print(q)
+        valid_options = ['a', 'b', 'c', 'd']
+        while True:
+            ch = input("Choose a option : ").lower()
+            if ch in valid_options:
+                if ch == questions[q]: 
+                    print("Correct")
+                    score += 1
+                    score_report[qno] = 1
+                    report[qno] = "Correct"
+                else:
+                    print("Incorrect")
+                    score -= 0.5
+                    score_report[qno] = 0.5
+                    report[qno] = "Incorrect"
+                break  # Exit the loop since a valid option was entered
+            else:
+                print("Enter a valid option (a, b, c, or d)")
+                
+        qno += 1  # Increment question number in report 
+
+    print()
+    print()
+    wrong_count = 0
+    correct_count = 0
+    for i in report.keys():
+        print(i, ' ' * 20, ":" * 5, report[i], ":" * 5, ' ' * 20, score_report[i])
+        if report[i] == "Incorrect":
+            wrong_count += 1
+        elif report[i] == "Correct":
+            correct_count += 1
+
+    print()
+    print(f"TOTAL CORRECT : {correct_count}   TOTAL INCORRECT : {wrong_count}")
+    print("Total Points:", score)
+    all_score[Name] = score
+    print()
+
+    if score == 15:
+        print("You Rocked it!")
+        print(f"{Name} You won CASH Price:", score * 100)
+        gift_items = ["smart Watch"," OTT subscription ","Headset","additional Cash Back"]
+        gift = random.choice(gift_items)
+
+        if gift == gift_items[3]:
+            print("You Have Received Additional Cash Back of ₹:", 1000)
+            print(f"{Name} Total Amount You Won:", score * 100 + 1000)
+            add_cash[Name] = 1000
+            
+        elif gift == gift_items[2]:
+            print(f"Congrats Dude {Name} Additionally You Won Headset Worth ₹1000")
+        elif gift == gift_items[1]:
+            print(f"Congats Dude {Name}  Additionally You Won Free OTT App Subscription for 1 month")
+        elif gift == gift_items[0]:
+            print(f"Congrats Dude {Name} Additionally You Won Smart Watch Worth ₹ 2000")
+        all_gifts[Name] = gift
+
+    elif score > 10 and score < 15:
+        print("That's Great!")
+        print(f"{Name} You won CASH Price:", score * 50)
+        
+        gift_items = ["Shopping Voucher","Scratch Card"]
+        # Randomly choose 3 gifts from the list
+        gift = random.choice(gift_items)
+        if gift == gift_items[1]:
+            print(f"Congats Dude {Name}  Additionally You Won Scratch Card")
+        elif gift == gift_items[0]:
+            print(f"Congrats Dude {Name} Additionally You Won Shopping Voucher")
+      
+    elif score >= 7 and score <= 10:
+        print(f"That's Good, {Name}!")
+        print(f"{Name} You won CASH Price:", score * 5)
+
+    elif score >= 5 and score < 7:
+        print(f"{Name} Thats k! 👏:)")
+    elif score < 5:
+        print(f" Dude {Name} Try Your Best for the next time! 👏:)")
+
+    print()
+    ch = input("Do you want to play the quiz again? Press 'y' or 'n': ")
+    if ch == 'n':
+        break
+
+print()
+print()
+print("REPORT")
+print("=" * 50)
+print(f"Total Users Played : {user_count}")
+print("=" * 50)
+
+# Print all users data
+for i in all_score.keys():
+    print("=" * 50)
+    print(f"NAME : {i}")
+    print(f"Score: {all_score[i]}")
+    print(f"Gift: {all_gifts.get(i, 'None')}")
+    print(f"Additional Cashback Rewarded: {add_cash.get(i, 'None')}")
+    print("-" * 50)
+
+print("=" * 50)
