@@ -1,4 +1,4 @@
-# MOVIE-QUIZ-GAME /APPLICATION-USING-PYTHON
+# MOVIE-QUIZ-GAME /APPLICATION-USING-PYTHON AND MY SQL
 
 ## Description
 
@@ -27,6 +27,12 @@ Sure, here's a detailed description for GitHub:
   -> Individual scores of each player.
   -> Gifts awarded to players based on their scores.
   -> Additional cashback rewarded for high scores.
+7.Implemented a database to store scores and player statistics.
+Utilized a database (SQLite, MySQL, etc.) to:
+- Store quiz questions, correct answers, and user scores.
+- Maintain a leaderboard to display top scores.
+- Allow users to log in and track their quiz history and performance over time.
+
 The script uses dictionaries to store scores (all_score), gifts (all_gifts), and additional cashback (add_cash). It iterates through these dictionaries to print a structured report for each user.
 
 ### Implementation
@@ -59,8 +65,6 @@ o	Adding more quiz questions to expand the scope.
 
 o	Incorporating a graphical user interface (GUI) for a more interactive experience.
 
-o	Implementing a database to store scores and player statistics.
-
 o	This project serves as an entertaining way to test your knowledge of Movies and can be customized further for educational purposes or entertainment events.
 Certainly! Here are some further enhancements and features that could be added to the Telugu cinema quiz game:
 
@@ -71,12 +75,6 @@ Integrate a GUI using libraries like Tkinter or PyQt to enhance the user interfa
 - Progress bars or indicators for tracking quiz completion.
 - Pop-up windows for displaying feedback and rewards.
 
-### 2. **Database Integration**
-
-Utilize a database (SQLite, MySQL, etc.) to:
-- Store quiz questions, correct answers, and user scores.
-- Maintain a leaderboard to display top scores.
-- Allow users to log in and track their quiz history and performance over time.
 
 ### 3. **Multiple Quiz Categories**
 
